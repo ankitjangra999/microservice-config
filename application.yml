@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Config-Default
+    name: MAGIX-WEB
 
   datasource:
     url: jdbc:oracle:thin:@122.160.175.215:1521:xe
