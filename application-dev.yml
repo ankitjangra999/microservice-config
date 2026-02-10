@@ -1,12 +1,32 @@
 spring:
-  application:
-    name: Config-Dev
+
+  datasource:
+    url: jdbc:oracle:thin:@122.160.175.215:1521:xe
+    username: MAGIXDATA
+    password: UNIT#341
+    driver-class-name: oracle.jdbc.OracleDriver
+    jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
 
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
-    fetch-registry: true         
-    registry-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8443/eureka
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+    
+    
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
